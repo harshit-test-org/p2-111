@@ -2,9 +2,13 @@
 
 This is a reproduction for https://github.com/prisma/prisma2/issues/111
 
+# Version
+
+prisma2@2.0.0-alpha.5, binary version: 30a33bde5b1d9f79e0a48491749528da76002e24
+
 # To Reproduce
 
-1. Clone and run prisma2 dev
+1. Clone and run yarn prisma2 dev
 2. Run prisma2 start
 3. Run the mutations(Fill IDs that you retieve)
 
