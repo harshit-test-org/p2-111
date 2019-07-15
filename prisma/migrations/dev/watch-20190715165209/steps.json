@@ -1,0 +1,111 @@
+{
+  "version": "0.0.132",
+  "steps": [
+    {
+      "stepType": "CreateModel",
+      "name": "EventType",
+      "embedded": false
+    },
+    {
+      "stepType": "CreateModel",
+      "name": "PassType",
+      "embedded": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "EventType",
+      "name": "id",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": true,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      },
+      "default": {
+        "Expression": [
+          "cuid",
+          "String",
+          []
+        ]
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "EventType",
+      "name": "name",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "EventType",
+      "name": "allowedPassTypes",
+      "type": {
+        "Relation": {
+          "to": "PassType",
+          "to_fields": [
+            "id"
+          ],
+          "name": "EventTypeToPassType",
+          "on_delete": "None"
+        }
+      },
+      "arity": "list",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PassType",
+      "name": "id",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": true,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      },
+      "default": {
+        "Expression": [
+          "cuid",
+          "String",
+          []
+        ]
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PassType",
+      "name": "name",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PassType",
+      "name": "allowedEventTypes",
+      "type": {
+        "Relation": {
+          "to": "EventType",
+          "to_fields": [
+            "id"
+          ],
+          "name": "EventTypeToPassType",
+          "on_delete": "None"
+        }
+      },
+      "arity": "list",
+      "isUnique": false
+    }
+  ]
+}
